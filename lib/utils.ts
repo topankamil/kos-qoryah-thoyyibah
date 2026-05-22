@@ -1,5 +1,5 @@
 export function formatWhatsAppMessage(roomName?: string): string {
-  const baseMessage = "Halo, saya tertarik dengan Kost Kost Ibu Wawan.";
+  const baseMessage = "Halo, saya tertarik dengan Kost Kost Ibu Wawa.";
   
   if (roomName) {
     return `${baseMessage} Saya ingin tanya tentang ${roomName}.`;
@@ -12,7 +12,6 @@ export function getWhatsAppLink(phone: string, message: string): string {
   const encodedMessage = encodeURIComponent(message);
   return `https://wa.me/${phone}?text=${encodedMessage}`;
 }
-// tes
 
 export function formatPrice(price: number): string {
   return new Intl.NumberFormat('id-ID', {
