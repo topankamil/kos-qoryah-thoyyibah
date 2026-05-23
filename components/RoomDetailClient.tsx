@@ -16,8 +16,24 @@ import {
   Copy,
   CheckCircle2,
 } from "lucide-react";
-import { Room, KOST_INFO } from "@/lib/dummyData";
+import { KOST_INFO } from "@/lib/dummyData";
 import { getWhatsAppLink, formatWhatsAppMessage, formatPrice } from "@/lib/utils";
+
+// Room interface
+interface Room {
+  id: number;
+  slug: string;
+  name: string;
+  type: string;
+  price: number;
+  size: string;
+  floor: number;
+  available: number;
+  description: string;
+  facilities: string[];
+  images: string[];
+  videoUrl?: string;
+}
 
 interface RoomDetailClientProps {
   room: Room;
@@ -236,7 +252,7 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
 
               {/* Buttons */}
               <div className="space-y-3">
-                <a
+                
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -394,7 +410,7 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
             </div>
 
             {/* Contact */}
-            <a
+            
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
