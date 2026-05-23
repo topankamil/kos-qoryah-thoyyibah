@@ -68,7 +68,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
 
   return (
     <>
-      {/* Breadcrumb */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center text-sm text-gray-600">
@@ -85,12 +84,9 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Images & Details */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Image Gallery */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="relative h-[400px] md:h-[500px] bg-gray-900">
                 <Image
@@ -100,7 +96,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                   className="object-cover cursor-pointer"
                   onClick={() => setShowLightbox(true)}
                 />
-                {/* Navigation Buttons */}
                 <button
                   onClick={prevImage}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors"
@@ -114,12 +109,10 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                   <ChevronRight className="w-6 h-6" />
                 </button>
 
-                {/* Image Counter */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
                   {currentImageIndex + 1} / {room.images.length}
                 </div>
 
-                {/* Watermark */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <span className="text-white/20 text-6xl font-bold transform -rotate-12">
                     SAMPLE
@@ -127,7 +120,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                 </div>
               </div>
 
-              {/* Thumbnail Gallery */}
               <div className="p-4 bg-gray-50">
                 <div className="grid grid-cols-4 gap-2">
                   {room.images.map((image, index) => (
@@ -152,7 +144,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </div>
             </div>
 
-            {/* Video Tour */}
             {room.videoUrl && (
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="p-6">
@@ -177,7 +168,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </div>
             )}
 
-            {/* Room Description */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Deskripsi
@@ -187,7 +177,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </p>
             </div>
 
-            {/* Facilities */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Fasilitas Kamar
@@ -203,10 +192,8 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
             </div>
           </div>
 
-          {/* Right Column - Booking Info */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-lg p-6 sticky top-24">
-              {/* Title & Badge */}
               <div className="mb-4">
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">
                   {room.type}
@@ -216,7 +203,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                 </h1>
               </div>
 
-              {/* Price */}
               <div className="mb-6 pb-6 border-b">
                 <div className="text-4xl font-bold text-blue-600 mb-1">
                   {formatPrice(room.price)}
@@ -224,7 +210,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                 <p className="text-gray-600">per bulan</p>
               </div>
 
-              {/* Room Info */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-gray-700">
                   <Ruler className="w-5 h-5 mr-3 text-gray-400" />
@@ -250,9 +235,8 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                 </div>
               </div>
 
-              {/* Buttons */}
               <div className="space-y-3">
-                
+                <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -270,7 +254,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
                 </button>
               </div>
 
-              {/* Info Box */}
               <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <h3 className="font-semibold text-gray-900 mb-2">
                   Informasi Penting
@@ -287,7 +270,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
         </div>
       </div>
 
-      {/* Lightbox */}
       {showLightbox && (
         <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
           <button
@@ -326,7 +308,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
         </div>
       )}
 
-      {/* QRIS Payment Modal */}
       {showQRIS && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-md w-full p-6">
@@ -342,7 +323,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </button>
             </div>
 
-            {/* QR Code Placeholder */}
             <div className="bg-white p-8 rounded-xl border-4 border-gray-200 mb-6">
               <div className="aspect-square bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                 <div className="text-center text-white">
@@ -355,7 +335,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </div>
             </div>
 
-            {/* Amount */}
             <div className="text-center mb-6">
               <p className="text-gray-600 mb-2">Total Pembayaran</p>
               <p className="text-3xl font-bold text-gray-900">
@@ -363,7 +342,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </p>
             </div>
 
-            {/* Instructions */}
             <div className="bg-blue-50 rounded-lg p-4 mb-6">
               <h4 className="font-semibold text-gray-900 mb-2">
                 Cara Pembayaran:
@@ -377,7 +355,6 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </ol>
             </div>
 
-            {/* Alternative Payment */}
             <div className="border-t pt-4">
               <p className="text-sm text-gray-600 mb-3">
                 Atau transfer ke rekening:
@@ -409,8 +386,7 @@ export default function RoomDetailClient({ room }: RoomDetailClientProps) {
               </div>
             </div>
 
-            {/* Contact */}
-            
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
